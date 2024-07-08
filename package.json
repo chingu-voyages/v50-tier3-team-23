@@ -1,0 +1,26 @@
+{
+  "name": "v50-tier3-team-23",
+  "version": "1.0.0",
+  "description": "RestaurantApp",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chingu-voyages/voyage-project-tier3-restaurantsim.git"
+  },
+  "keywords": [
+    "Restaurant",
+    "App"
+  ],
+  "author": "Team 23 Chingu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chingu-voyages/voyage-project-tier3-restaurantsim/issues"
+  },
+  "homepage": "https://github.com/chingu-voyages/voyage-project-tier3-restaurantsim#readme"
+}
