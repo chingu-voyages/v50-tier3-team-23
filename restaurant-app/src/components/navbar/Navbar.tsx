@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import "./navbar.css";
-import Icon from '/src/assets/knife-fork-nutrition-food-128.svg';
 
 export const Navbar = () => {
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const products = ["Pizza", "Pasta", "Burgers", "Soup", "Appetizers", "Salad", "Beverage", "Dessert"];
+  const [selectedProduct, setSelectedProduct] = useState("");
+  const products: string[] = ["Pizza", "Pasta", "Burgers", "Soup", "Appetizers", "Salad", "Beverage", "Dessert"];
 
-  function handleProductClick(product) {
+  function handleProductClick(product: string) {
     setSelectedProduct(product);
   }
 
-  function createNavbarItems(products) {
+  function createNavbarItems(products: string[]) {
     return products.map((prod, index) => {
       return (
         <div
@@ -28,7 +27,7 @@ export const Navbar = () => {
   return (
     <div className='navbar'>
       <div className='iconDiv'>
-        <img src={Icon} alt="fork and knife" width="24" height="24" />
+        <img src="/src/assets/pictures/knife-fork-nutrition-food-128.svg" alt="fork and knife" width="24" height="24" />
       </div>
       <div className='menu-list'>
         {createNavbarItems(products)}

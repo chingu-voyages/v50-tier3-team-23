@@ -35,6 +35,10 @@
     display: inline-block; 
     position: relative; 
     padding-bottom: 3px;
+    -webkit-user-select: none; 
+    -moz-user-select: none;   
+    -ms-user-select: none;     
+    user-select: none;
   }
   
   .product::after {
@@ -66,3 +70,10 @@
     font-family: PoppinsLight;
     src: url("../../assets/fonts/Poppins-Light.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: PoppinsBold;
+  src: url("../../assets/fonts/Poppins-ExtraBold.ttf") format("truetype");
+
+}
+

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { CartItem } from "./cart-item";
-import "../App.css"
+import { CartItem } from "./Cart-Item";
+import "../../App.css"
 export const Cart = () => {
 
   return (
