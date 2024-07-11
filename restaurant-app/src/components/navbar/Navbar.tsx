@@ -5,8 +5,13 @@ export const Navbar = () => {
   const [selectedProduct, setSelectedProduct] = useState("");
   const products: string[] = ["Pizza", "Pasta", "Burgers", "Soup", "Appetizers", "Salad", "Beverage", "Dessert"];
 
+  function addProductToLocalStorage(product : string){
+    localStorage.setItem('product', product)
+  } 
   function handleProductClick(product: string) {
     setSelectedProduct(product);
+    addProductToLocalStorage(product);
+    
   }
 
   function createNavbarItems(products: string[]) {
