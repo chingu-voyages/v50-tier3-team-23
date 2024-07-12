@@ -7,6 +7,7 @@ export const Navbar = () => {
   const [productsInfo, setProductsInfo] = useState<any[]>([]);
   const [data, setData] = useState<any | null>(null);
 
+  //fetch the data
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -26,6 +27,7 @@ export const Navbar = () => {
     fetchData();
   }, []);
 
+  //organize data
   useEffect(() => {
     if (data) {
       divideRelevantData(data);
@@ -47,17 +49,13 @@ export const Navbar = () => {
     setProductsInfo(newProductsInfo);
   }
 
-  function handleProductClick(product: string) {
-    setSelectedProduct(product);
-  }
-
-  function createNavbarItems(products: string[]) {
-    return products.map((prod, index) => (
+  function createNavbarItems(productsCategories: string[]) {
+    return productsCategories.map((prod, index) => (
       <div
         className={`product ${selectedProduct === prod ? 'selected' : ''}`}
         id={prod + index}
         key={index}
-        onClick={() => handleProductClick(prod)}
+        onClick={() => setSelectedProduct(prod)}
       >
         {prod}
       </div>
