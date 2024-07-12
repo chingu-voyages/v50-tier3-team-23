@@ -66,6 +66,10 @@
     transform-origin: bottom left;
   }
 
+
+.list-items{
+  padding-left: 10px;
+}
 @font-face {
     font-family: PoppinsLight;
     src: url("../../assets/fonts/Poppins-Light.ttf") format("truetype");

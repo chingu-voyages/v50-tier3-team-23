@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface ProductProps {
+interface ProductDetail {
   type?: string;
   name?: string;
   price?: number;
@@ -8,7 +8,7 @@ interface ProductProps {
   discount?: number;
 }
 
-export const Product: React.FC<ProductProps> = ({
+export const Product: React.FC<ProductDetail> = ({
   type = "Pizza",
   name = "Pepperoni Pineapple Pizza",
   price = 15,

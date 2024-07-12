@@ -10,7 +10,6 @@ export const FoodCategories = () => {
       <div className=" flex-1">
         <h2 className="font-poppins-bold cursor-pointer inline-block relative select-none text-3xl">What you like ? </h2>
         <Navbar />
-        <h3>{localStorage.getItem("product")}</h3>
 
       </div>
       <div className=" lg:w-[25%] w-full">

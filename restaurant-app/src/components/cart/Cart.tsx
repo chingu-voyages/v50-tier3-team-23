@@ -22,7 +22,7 @@ export const Cart = () => {
             </div>
             <div className="w-full h-[40vh] overflow-y-scroll hide-scrollbar  flex flex-col gap-4">
               {OrderList.map((list, id) => (
-                <CartItem food={list.food} foodprice={list.price} />
+                <CartItem food={list.food} key={id} foodprice={list.price} />
               ))}
             </div>
           </div>
