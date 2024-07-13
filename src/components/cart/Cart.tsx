@@ -1,10 +1,50 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CartItem } from "./Cart-Item";
-import "../../App.css"
+import "../../App.css";
+import { createUser, getAllUsers } from "../../utils/actions";
 export const Cart = () => {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [user, setUsers] = useState([]);
+
+  useEffect(() => {
+    showUsers();
+  }, []);
+
+  useEffect(() => {
+    console.log("users: ", user);
+  }, [user]);
+
+  const showUsers = async () => {
+    const response = await getAllUsers();
+    setUsers(response);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const res = await createUser(email, name);
+    console.log("CREATED USER: ", res);
+  };
 
   return (
     <div className="flex border w-full ">
+      <form className="border-black border-2">
+        <input
+          type="text"
+          name="name"
+          id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <button onClick={handleSubmit}>Sign Up</button>
+      </form>
       <div className="w-full">
         <div
           className=" w-full h-[30vh]"
@@ -22,14 +62,16 @@ export const Cart = () => {
             </div>
             <div className="w-full h-[40vh] overflow-y-scroll hide-scrollbar  flex flex-col gap-4">
               {OrderList.map((list, id) => (
-                <CartItem food={list.food} foodprice={list.price} />
+                <CartItem food={list.food} foodprice={list.price} key={id} />
               ))}
             </div>
           </div>
           <div className=" w-full flex mt-2 px-6 py-5 rounded-r-3xl bg-gray-300">
             <div className="flex items-center justify-between w-full">
               <p>Total: $25.96</p>
-              <button className="px-10 py-2 bg-blue-600 rounded-full text-white">Payment</button>
+              <button className="px-10 py-2 bg-blue-600 rounded-full text-white">
+                Payment
+              </button>
             </div>
           </div>
         </div>
@@ -39,8 +81,8 @@ export const Cart = () => {
 };
 
 const OrderList = [
-  {food: "Prime Beef",price: 6.99},
-  {food: "Cheesy Chicken Bacon",price: 7.99},
-  {food: "Half - Half Ocean Mania & Meat Lovers",price: 7.99},
-  {food: "Cocacola",price: 2.99},
-]
+  { food: "Prime Beef", price: 6.99 },
+  { food: "Cheesy Chicken Bacon", price: 7.99 },
+  { food: "Half - Half Ocean Mania & Meat Lovers", price: 7.99 },
+  { food: "Cocacola", price: 2.99 },
+];
