@@ -20,11 +20,11 @@ export const createUser = async (email: string, name: string) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        user_email: email || "temp2@gmail.com",
-        name: name || "admin",
+        user_email: email,
+        name: name,
       }),
     });
-    console.log("SUCCESS CREATING USER");
+    console.log("SUCCESS CREATING USER: ", response);
     return response;
   } catch (error) {
     console.log("ERROR CREATING USER");

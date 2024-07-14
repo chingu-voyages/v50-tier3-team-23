@@ -21,13 +21,19 @@ export const Cart = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const res = await createUser(email, name);
-    console.log("CREATED USER: ", res);
+    await createUser(email, name);
   };
 
   return (
-    <div className="flex border w-full ">
+    <div className="flex border w-full relative">
+      <div className="">
+        <div className="flex w-full">
+          Hello,{" "}
+          {user.map(({ name, id }) => (
+            <div key={id}>{name}</div>
+          ))}
+        </div>
+      </div>
       <form className="border-black border-2">
         <input
           type="text"
