@@ -22,7 +22,6 @@ app.get("/getAllUsers", async (req, res) => {
 app.post("/createUser", async (req, res) => {
   try {
     const { user_email, name } = req.body;
-    console.log("email: ", user_email, "name: ", name);
     const id = uuidv4() || 2;
     const response = await pool.query(
       `INSERT INTO users(id, user_email, name) VALUES($1, $2, $3)`,
