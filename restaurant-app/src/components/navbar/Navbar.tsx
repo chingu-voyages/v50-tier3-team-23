@@ -67,9 +67,15 @@ export const Navbar = () => {
 
     if (selectedProductInfo) {
       return selectedProductInfo[selectedProduct].map((item: any, index: number) => (
-        <div key={index}>
-          <div>{item.name}</div>
+        <div className='product-info-div' key={index}>
+          <div className='info-and-img'>
           <img src={item.img} alt={item.name} width={50} height={50}/>
+            <p>{item.dsc}</p>
+          </div>
+          <div>
+            <p>{item.price}.00 $</p>
+            <button>+</button>
+          </div>
         </div>
       ));
     }
