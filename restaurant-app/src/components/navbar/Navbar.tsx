@@ -35,14 +35,8 @@ export const Navbar = () => {
   }, [data]);
 
   function divideRelevantData(data: Record<string, any[]>) {
-    const keys = Object.keys(data);
-    const burger = keys[3];
-    const friedChicken = keys[7];
-    const bbqs = keys[0];
-    const pizzas = keys[9];
-    const drinks = keys[6];
-    const desserts = keys[5];
-    const newProducts = [burger, friedChicken, bbqs, pizzas, drinks, desserts];
+    
+    const newProducts = ["burgers", "fried-chicken", "bbqs","pizzas", "drinks", "desserts"];
     setProducts(newProducts);
 
     const newProductsInfo = newProducts.map(key => ({ [key]: data[key].slice(-5) }));
