@@ -1,5 +1,5 @@
 export const getAllUsers = async () => {
-  const url = "http://localhost:8000/getAllUsers";
+  const url = `${import.meta.env.VITE_PUBLIC_SERVER_URL}/getAllUsers`;
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -14,7 +14,7 @@ export const getAllUsers = async () => {
 };
 
 export const createUser = async (email: string, name: string) => {
-  const url = "http://localhost:8000/createUser";
+  const url = `${import.meta.env.VITE_PUBLIC_SERVER_URL}/createUser`;
   try {
     const response = await fetch(url, {
       method: "POST",
