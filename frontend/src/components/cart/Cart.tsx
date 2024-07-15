@@ -29,9 +29,7 @@ export const Cart = () => {
       <div className="">
         <div className="flex w-full">
           Hello,{" "}
-          {user.map(({ name, id }) => (
-            <div key={id}>{name}</div>
-          ))}
+          {user && user.map(({ name, id }) => <div key={id}>{name}</div>)}
         </div>
       </div>
       <form className="border-black border-2">
