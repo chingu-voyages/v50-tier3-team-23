@@ -1,4 +1,4 @@
-const baseUrl = import.meta.env.VITE_PUBLIC_SERVER_URL;
+const baseUrl = import.meta.env.VITE_APP_PUBLIC_SERVER_URL;
 
 export const getAllUsers = async () => {
   const url = `${baseUrl}/getAllUsers`;
