@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "build": "npx if-env TYPE=server && (cd server && npm install) || (cd frontend && npm install)",
+    "build": "npx if-env TYPE=server && (cd server && npm install) || (cd frontend && npm install && npm run build)",
     "server": "node ./server/server.js",
     "frontend": "cd frontend && npm run dev"
   },
