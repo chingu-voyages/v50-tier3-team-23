@@ -9,6 +9,10 @@ app.use(express.json());
 
 const pool = require("./db");
 
+app.get("/", async (req, res) => {
+  res.send("Hello World");
+});
+
 app.get("/getAllUsers", async (req, res) => {
   try {
     const response = await pool.query("SELECT * FROM users");
