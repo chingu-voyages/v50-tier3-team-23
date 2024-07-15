@@ -74,16 +74,7 @@
   padding-left: 10px;
 }
 
-.product-info-div{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border: 1px solid black;
-}
 
-.info-and-img{
-  display: flex;
-}
 @font-face {
     font-family: PoppinsLight;
     src: url("../../assets/fonts/Poppins-Light.ttf") format("truetype");
