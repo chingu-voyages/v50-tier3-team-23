@@ -7,13 +7,13 @@
     "doc": "docs"
   },
   "scripts": {
-    "build": "if-env TYPE=server && (cd server && npm install && npm run server) || (cd frontend && npm install)",
+    "build": "npx if-env TYPE=server && (cd server && npm install) || (cd frontend && npm install)",
     "server": "node ./server/server.js",
     "frontend": "cd frontend && npm run dev"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "if-env": "^1.0.4"
   }
 }
