@@ -12,7 +12,6 @@ And before we go there's "one more thing"! Once you decide what to include
 in your `readme` feel free to replace the text we've provided here.
 
 > Own it & Make it your Own!
-
 ## Team Documents
 
 You may find these helpful as you work together to organize your project.
