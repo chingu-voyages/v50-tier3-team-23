@@ -4,11 +4,12 @@ const { v4: uuidv4 } = require("uuid");
 const cors = require("cors");
 const Stripe = require('stripe');
 const app = express();
+require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
 
-const stripe = Stripe('sk_test_51PcseeRowLO89tu0hYoL5HfsyQ2YswR2ptihSiVSC4UnKvc4nH7Mnt8obiyefhp4y55y6mgjuMg5SrEghgTq3TKa00XmdcOD15')
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY)
 const pool = require("./db");
 
 app.get("/", async (req, res) => {

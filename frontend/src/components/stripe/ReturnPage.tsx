@@ -32,7 +32,7 @@ export const ReturnPage = () => {
               <div className='flex justify-center items-center flex-col w-[50%] space-y-2'>
                 <h1 className='text-3xl font-semibold'>Restaurant</h1>
               <p className='text-center text-xl '>
-              We appreciate your business! A confirmation email will be sent to {customerEmail}.
+              We appreciate you patronizing us! A confirmation email will be sent to {customerEmail}.
     
               If you have any questions, please email <a href="mailto:orders@example.com">team-23@gmail.com</a>.
               </p>

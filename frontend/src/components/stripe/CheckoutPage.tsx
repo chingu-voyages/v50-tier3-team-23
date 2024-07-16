@@ -4,10 +4,12 @@ import {
   EmbeddedCheckoutProvider,
   EmbeddedCheckout,
 } from "@stripe/react-stripe-js";
+const stripekey = import.meta.env.VITE_STRIPE_LOAD_KEY;
+if(!stripekey){
+  throw new Error('STRIPE_LOAD_KEY environment variable is not set');
+}
 
-const stripePromise = loadStripe(
-  "pk_test_51PcseeRowLO89tu0fk8LduxUbNsfGukGd3DYowEuuuf8OEIFQnWDTHf4MMVDvrPS08gTO7MUghrkWeJ6RrvTVfHY00ICgCLBXs"
-);
+const stripePromise = loadStripe(stripekey);
 export const CheckoutPage = () => {
     const fetchClientSecret = useCallback(() => {
         return fetch("http://localhost:8000/create-checkout-session", {
