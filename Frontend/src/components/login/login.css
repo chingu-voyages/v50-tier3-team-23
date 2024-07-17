@@ -1,0 +1,50 @@
+#headerContainerLogin {
+    width: 100%;
+    border: none;
+    border-bottom-left-radius: 1.5em;
+    border-top-left-radius: 1.5em;
+    height: 60px;
+}
+
+#bodyContainerLogin {
+    background-color: #dbbd63fa;
+}
+
+#cardLoginContainer {
+    width: 100%;
+    height: 100%;
+    border: none;
+    scale: none;
+}
+
+#collumnLoginContainer {
+    padding: 0;
+    width: 100%;
+}
+
+#rowLoginContainer {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+#loginContainerInside {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#loginContainerOutside {
+    height: 100vh;
+    padding-top: 1.5em;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30%;
+}
+
+#cardLoginContainer:hover {
+    transform: none;
+}
