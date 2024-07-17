@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { CartItem } from "./Cart-Item";
 import "../../App.css";
-import { createUser, getAllUsers } from "../../utils/actions";
+import { createUser, getAllUsers, checkOut } from "../../utils/actions";
+import { CheckoutPage } from "../stripe/CheckoutPage";
+import { Link } from "react-router-dom";
+
 export const Cart = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -23,6 +26,9 @@ export const Cart = () => {
   const handleSubmit = async (e) => {
     await createUser(email, name);
   };
+
+
+
 
   return (
     <div className="flex border w-full relative">
@@ -73,9 +79,9 @@ export const Cart = () => {
           <div className=" w-full flex mt-2 px-6 py-5 rounded-r-3xl bg-gray-300">
             <div className="flex items-center justify-between w-full">
               <p>Total: $25.96</p>
-              <button className="px-10 py-2 bg-blue-600 rounded-full text-white">
-                Payment
-              </button>
+              <Link to="/checkout">
+              <button className="px-10 py-2 bg-blue-600 rounded-full text-white">Pay</button>
+              </Link>
             </div>
           </div>
         </div>
