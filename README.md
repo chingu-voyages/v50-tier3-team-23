@@ -34,6 +34,6 @@ your repo access and to practice PR'ing with your team *before* you start
 coding!
 
 - Mariana Farcas: [GitHub]_(https://github.com/MarianaFarcas]) / [LinkedIn](www.linkedin.com/in/mariana-f-6592661b5)
-- Teammate name #2: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Mariana Farcas: [GitHub](https://github.com/MarianaFarcas) / [LinkedIn](https://linkedin.com/in/mariana-f-6592661b5)
 ...
 - Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
