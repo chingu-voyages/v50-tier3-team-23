@@ -1,54 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { CartItem } from "./Cart-Item";
 import "../../App.css";
-import { createUser, getAllUsers } from "../../utils/actions";
+import AuthPage from "../AuthPage";
 export const Cart = () => {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [user, setUsers] = useState([]);
-
-  useEffect(() => {
-    showUsers();
-  }, []);
-
-  useEffect(() => {
-    console.log("users: ", user);
-  }, [user]);
-
-  const showUsers = async () => {
-    const response = await getAllUsers();
-    setUsers(response);
-  };
-
-  const handleSubmit = async (e) => {
-    await createUser(email, name);
-  };
-
   return (
     <div className="flex border w-full relative">
-      <div className="">
-        <div className="flex w-full">
-          Hello,{" "}
-          {user && user.map(({ name, id }) => <div key={id}>{name}</div>)}
-        </div>
-      </div>
-      <form className="border-black border-2">
-        <input
-          type="text"
-          name="name"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          type="email"
-          name="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <button onClick={handleSubmit}>Sign Up</button>
-      </form>
+      <AuthPage />
       <div className="w-full">
         <div
           className=" w-full h-[30vh]"
