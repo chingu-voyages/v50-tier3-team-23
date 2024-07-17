@@ -6,11 +6,14 @@ const bcrypt = require("bcrypt");
 const { v4: uuidv4 } = require("uuid");
 
 const cors = require("cors");
+const Stripe = require('stripe');
 const app = express();
+require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
 
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY)
 const pool = require("./db");
 
 app.get("/", async (req, res) => {
@@ -82,6 +85,42 @@ app.post("/login", async (req, res) => {
     console.log("ERROR CREATING USER: ", error.detail);
     return { status: 401, message: error };
   }
+});
+
+app.post("/create-checkout-session", async (req,res) => {
+  try {
+    const session = await stripe.checkout.sessions.create({
+      ui_mode: 'embedded',
+      payment_method_types: ['card'],
+      line_items: [
+        {
+          price_data: {
+            currency: 'usd',
+            product_data: {
+              name: 'Burger',
+            },
+            unit_amount: 2000,
+          },
+          quantity: 1,
+        },
+      ],
+      mode: 'payment',
+      return_url: "http://localhost:5173/return?session_id={CHECKOUT_SESSION_ID}",
+    });
+  
+    res.send({ clientSecret: session.client_secret });
+  } catch (error) {
+    res.status(500).send({ error: error.message });
+  }
+})
+
+app.get('/session-status', async (req, res) => {
+  const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
+
+  res.send({
+    status: session.status,
+    customer_email: session.customer_details.email
+  });
 });
 
 app.listen(PORT, () => console.log(`Server running on PORT ${PORT}`));

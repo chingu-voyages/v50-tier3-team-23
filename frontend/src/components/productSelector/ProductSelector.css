@@ -1,0 +1,10 @@
+.product-info-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid black;
+  }
+  
+  .info-and-img{
+    display: flex;
+  }

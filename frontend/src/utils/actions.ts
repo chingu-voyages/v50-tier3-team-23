@@ -43,3 +43,21 @@ export const signUp = async ({
     return error;
   }
 };
+
+export const checkOut = async (quantity : number) => {
+  const url = `${baseUrl}/create-checkout-session`;
+  try {
+    const response = await fetch('http://localhost:8000/create-checkout-session', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        quantity: quantity
+      })
+    })
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+}

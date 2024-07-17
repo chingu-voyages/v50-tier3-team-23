@@ -66,6 +66,15 @@
     transform-origin: bottom left;
   }
 
+
+.list-items{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 10px;
+}
+
+
 @font-face {
     font-family: PoppinsLight;
     src: url("../../assets/fonts/Poppins-Light.ttf") format("truetype");
