@@ -36,5 +36,5 @@ coding!
 - Victor Stanescu #1: [GitHub](https://github.com/stanescuV) / [LinkedIn](https://www.linkedin.com/in/victor-stanescu-83bb68194/)
 - Mariana Farcas #2: [GitHub](https://github.com/MarianaFarcas) / [LinkedIn](https://linkedin.com/in/mariana-f-6592661b5)
 - Joshua Famose #3: [GitHub](https://github.com/Joshf225) / [LinkedIn](https://www.linkedin.com/in/joshua-famose-649179247/)
-- Teammate name #4: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Favour Sunday #4: [GitHub](https://github.com/Sunday012) / [LinkedIn](https://www.linkedin.com/in/favour-sunday-6059682a2/)
 - Teammate name #5: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
