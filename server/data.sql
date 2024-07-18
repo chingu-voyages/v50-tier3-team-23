@@ -12,4 +12,4 @@ CREATE TABLE users (
 
 ALTER TABLE users IF EXISTS ALTER created_at TYPE <data_type> 
 
-SELECT user_email FROM users WHERE user_email = 'admin@gmail.com';
+SELECT password FROM users WHERE user_email = 'admin@gmail.com';

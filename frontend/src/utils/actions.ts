@@ -44,20 +44,48 @@ export const signUp = async ({
   }
 };
 
-export const checkOut = async (quantity : number) => {
+export const login = async ({
+  email,
+  password,
+}: {
+  email: string;
+  password: string;
+}) => {
+  const url = `${baseUrl}/login`;
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        user_email: email,
+        password: password,
+      }),
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log("ERROR LOGGING IN USER: ", error);
+    return error;
+  }
+};
+
+export const checkOut = async (quantity: number) => {
   const url = `${baseUrl}/create-checkout-session`;
   try {
-    const response = await fetch('http://localhost:8000/create-checkout-session', {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        quantity: quantity
-      })
-    })
+    const response = await fetch(
+      "http://localhost:8000/create-checkout-session",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          quantity: quantity,
+        }),
+      }
+    );
     return response;
   } catch (error) {
     console.error(error);
   }
-}
+};

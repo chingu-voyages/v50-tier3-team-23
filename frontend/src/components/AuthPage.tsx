@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { UserType } from "../utils/types";
-import { signUp, getAllUsers } from "../utils/actions";
+import { signUp, getAllUsers, login } from "../utils/actions";
 import { useCookies } from "react-cookie";
 
 const AuthPage = () => {
@@ -27,6 +27,24 @@ const AuthPage = () => {
     if (response.status !== 200) {
       setError(response.error);
     } else {
+      setCookie("Email", response.user_email);
+      setCookie("AuthToken", response.token);
+      setIsLoggedIn(true);
+      setEmail("");
+      setPassword("");
+      setError(null);
+      window.location.reload();
+    }
+  };
+
+  const handleLogin = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const response = await login({ email, password });
+    console.log("Response received:", response);
+    if (response.status !== 200) {
+      setError(response.error);
+    } else {
+      console.log("error: ", error);
       setCookie("Email", response.user_email);
       setCookie("AuthToken", response.token);
       setIsLoggedIn(true);
@@ -76,7 +94,7 @@ const AuthPage = () => {
           <button onClick={(e) => handleSignUp(e)}>Sign Up</button>
         )}
         {!cookie.Email ? (
-          <button>Login</button>
+          <button onClick={(e) => handleLogin(e)}>Login</button>
         ) : (
           <button onClick={(e) => handleLogout(e)}>Logout</button>
         )}
