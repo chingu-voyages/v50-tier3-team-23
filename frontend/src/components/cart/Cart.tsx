@@ -1,54 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { CartItem } from "./Cart-Item";
 import "../../App.css";
-import { createUser, getAllUsers } from "../../utils/actions";
+import AuthPage from "../AuthPage";
+import React from "react";
+import { CartItem } from "./Cart-Item";
+import { checkOut } from "../../utils/actions";
+import { CheckoutPage } from "../stripe/CheckoutPage";
+import { Link } from "react-router-dom";
+
 export const Cart = () => {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [user, setUsers] = useState([]);
-
-  useEffect(() => {
-    showUsers();
-  }, []);
-
-  useEffect(() => {
-    console.log("users: ", user);
-  }, [user]);
-
-  const showUsers = async () => {
-    const response = await getAllUsers();
-    setUsers(response);
-  };
-
-  const handleSubmit = async (e) => {
-    await createUser(email, name);
-  };
-
   return (
     <div className="flex border w-full relative">
-      <div className="">
-        <div className="flex w-full">
-          Hello,{" "}
-          {user && user.map(({ name, id }) => <div key={id}>{name}</div>)}
-        </div>
-      </div>
-      <form className="border-black border-2">
-        <input
-          type="text"
-          name="name"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          type="email"
-          name="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <button onClick={handleSubmit}>Sign Up</button>
-      </form>
+      <AuthPage />
       <div className="w-full">
         <div
           className=" w-full h-[30vh]"
@@ -73,9 +34,11 @@ export const Cart = () => {
           <div className=" w-full flex mt-2 px-6 py-5 rounded-r-3xl bg-gray-300">
             <div className="flex items-center justify-between w-full">
               <p>Total: $25.96</p>
-              <button className="px-10 py-2 bg-blue-600 rounded-full text-white">
-                Payment
-              </button>
+              <Link to="/checkout">
+                <button className="px-10 py-2 bg-blue-600 rounded-full text-white">
+                  Pay
+                </button>
+              </Link>
             </div>
           </div>
         </div>

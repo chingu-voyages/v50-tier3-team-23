@@ -1,0 +1,40 @@
+#containerFoodCard{
+    height: 100vh;
+    width: 30vw;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+
+}
+
+#containerImageCard{
+    height: 50%;
+    width: 100%;
+}
+
+#containerContentCard{
+    height: 50%;
+    width: 100%;
+    padding-top: 3em;
+}
+
+#imageCard{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#containerFoodCardInside{
+    padding: 0;
+}
+
+#quantity{
+    width: 90%;
+}
+
+#imageInside{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

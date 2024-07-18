@@ -1,7 +1,5 @@
-const Pool = require("pg").Pool;
+const { Pool } = require("pg");
 require("dotenv").config();
-
-const pg = require("pg");
 
 const config = {
   user: process.env.DB_USER,
@@ -9,12 +7,15 @@ const config = {
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
   database: process.env.DB_NAME,
-  ssl: {
-    rejectUnauthorized: true,
-    ca: process.env.CA_CERT,
-  },
 };
 
-const pool = new pg.Pool(config);
+if (process.env.NODE_ENV === "production") {
+  config.ssl = {
+    rejectUnauthorized: true,
+    ca: process.env.CA_CERT,
+  };
+}
+
+const pool = new Pool(config);
 
 module.exports = pool;

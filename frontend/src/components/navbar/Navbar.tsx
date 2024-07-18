@@ -1,36 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 import "./navbar.css";
 
-export const Navbar = () => {
+type NavbarProps = {
+  categs: any;
+  navbarHasSelected: Function;
+};
+
+export const Navbar: React.FC<NavbarProps> = (props) => {
+  const { categs, navbarHasSelected } = props;
+
   const [selectedProduct, setSelectedProduct] = useState("");
-  const products: string[] = ["Pizza", "Pasta", "Burgers", "Soup", "Appetizers", "Salad", "Beverage", "Dessert"];
 
-  function handleProductClick(product: string) {
-    setSelectedProduct(product);
-  }
-
-  function createNavbarItems(products: string[]) {
-    return products.map((prod, index) => {
-      return (
-        <div
-          className={`product ${selectedProduct === prod ? 'selected' : ''}`}
-          id={prod + index}
-          key={index}
-          onClick={() => handleProductClick(prod)}
-        >
-          {prod}
-        </div>
-      );
-    });
+  function createNavbarItems(productsCategories: string[]) {
+    return productsCategories?.map((prod, index) => (
+      <div
+        className={`product ${selectedProduct === prod ? "selected" : ""}`}
+        id={prod + index}
+        key={index}
+        onClick={() => {
+          navbarHasSelected(prod);
+          setSelectedProduct(prod);
+        }}
+      >
+        {prod}
+      </div>
+    ));
   }
 
   return (
-    <div className='navbar'>
-      <div className='iconDiv'>
-        <img src="/src/assets/pictures/knife-fork-nutrition-food-128.svg" alt="fork and knife" width="24" height="24" />
-      </div>
-      <div className='menu-list'>
-        {createNavbarItems(products)}
+    <div>
+      <div className="navbar">
+        <div className="iconDiv">
+          <img
+            src="/src/assets/pictures/knife-fork-nutrition-food-128.svg"
+            alt="fork and knife"
+            width="24"
+            height="24"
+          />
+        </div>
+        <div className="menu-list">{createNavbarItems(categs)}</div>
       </div>
     </div>
   );
