@@ -1,0 +1,44 @@
+#headerRegisterContainer{
+    width: 100%;
+    border: none;
+    border-bottom-left-radius: 1.5em;
+    border-top-left-radius: 1.5em;
+    height: 60px;
+}
+#bodyRegisterContainer{
+    background-color: #bfbfbf;
+}
+#cardRegisterContainer{
+    width: 100%;
+    height: 100%;
+    border: none;
+    scale: none;
+}
+#collumnRegisterContainer{
+    padding: 0;
+    width: 100%;
+}
+#rowRegisterContainer{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+#registerContainerInside{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+#registerContainerOutside{
+    height: 100vh;
+    padding-top: 1.5em;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30%;
+}
+
+#cardRegisterContainer:hover {
+    transform: none;
+  }

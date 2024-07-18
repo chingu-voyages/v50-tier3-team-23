@@ -1,0 +1,49 @@
+/* General reset */
+body, html {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Container for the cards */
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    background-color: white;
+  }
+  
+  /* Card styles */
+  .card {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card img {
+    width: 400%;
+    height: 400%;
+    object-fit: cover;
+  }
+  
+  .card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card .card-title {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: "PoppinsBold";
+    font-size: 14px;
+  }
