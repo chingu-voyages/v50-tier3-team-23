@@ -24,11 +24,11 @@ const Login = ({noteRegister, setNoteRegister,
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post(`http://localhost:5173/login`, formData);
+      const { data } = await axios.post(`http://127.0.0.1:8060/login`, formData);
       console.log(data.token);
       console.log(data);
       localStorage.setItem("token", data.token);
-      localStorage.setItem("userId", data.payload.id);
+      // localStorage.setItem("userId", data.payload.id);
       axios.defaults.headers.common["Authorization"] = `Bearer ${data.token}`;
       setNoteLogin(false);
       setNoteRegister(false);

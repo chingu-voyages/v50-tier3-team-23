@@ -12,10 +12,10 @@ export const FoodCategories = () => {
   const [foodSelected, setFoodSelected] = useState("");
   const [foodSelectedIndex, setFoodSelectedIndex] = useState("");
   const [foodSelectedList, setFoodSelectedList] = useState("");
-  const [noteRegister, setNoteRegister] = useState("true");
-  const [noteLogin, setNoteLogin] = useState("false");
-  const [noteFoodCard, setNoteFoodCard] = useState("false");
-  const [noteMainPage, setNoteMainPage] = useState("false");
+  const [noteRegister, setNoteRegister] = useState(true);
+  const [noteLogin, setNoteLogin] = useState(false);
+  const [noteFoodCard, setNoteFoodCard] = useState(false);
+  const [noteMainPage, setNoteMainPage] = useState(false);
 
 
   useEffect (()=> {
