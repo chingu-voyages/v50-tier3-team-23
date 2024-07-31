@@ -10,7 +10,10 @@ import "./Main.css"; // Make sure to import the CSS
     noteRegister, setNoteRegister,
     noteLogin, setNoteLogin,
     noteFoodCard, setNoteFoodCard,
-    noteMainPage, setNoteMainPage }) => {
+    noteMainPage, setNoteMainPage,
+    noteBasket, setNoteBasket,
+    noteMainFoodPage, setNoteMainFoodPage,
+    isLargeScreen, setIsLargeScreen}) => {
     const [foodData, setFoodData] = useState([]);
     
   
@@ -31,6 +34,9 @@ import "./Main.css"; // Make sure to import the CSS
 
 
       function handleFoodClick(food, index, productName) {
+        
+        setNoteMainFoodPage(false);
+     
         setFoodSelected(food);
         setFoodSelectedIndex(index);
         setFoodSelectedList(productName)
@@ -38,6 +44,7 @@ import "./Main.css"; // Make sure to import the CSS
         setNoteRegister(false);
         setNoteFoodCard(true);
         setNoteMainPage(false);
+        setNoteBasket(false);
       }
     
   

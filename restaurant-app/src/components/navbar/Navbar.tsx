@@ -10,37 +10,86 @@ export const Navbar = ({ productName, setProductName ,changePage, setChangePage,
   noteRegister, setNoteRegister,
   noteLogin, setNoteLogin,
   noteFoodCard, setNoteFoodCard,
-  noteMainPage, setNoteMainPage}) => {
+  noteMainPage, setNoteMainPage,
+  noteBasket, setNoteBasket,
+  noteMainFoodPage, setNoteMainFoodPage,
+  isLargeScreen, setIsLargeScreen,
+  loggedOut, setLoggedOut}) => {
   const [selectedProduct, setSelectedProduct] = useState("");
   const products: string[] = ["pizzas", "burgers", "porks", "fried-chicken", "steaks", "desserts"];
-  const [loggedOut, setLoggedOut] = useState(true);
-
+  
   
 
   function handleProductClick(product: string) {
+    if(!isLargeScreen){
+      setNoteMainFoodPage(true);
+      setNoteLogin(false);
+      setNoteRegister(false);
+      setNoteFoodCard(false);
+      setNoteMainPage(false);
+      setNoteBasket(false);
+    }
     setSelectedProduct(product);
     setProductName(product);
     setChangePage(!changePage)
   }
   const clickLoginPage = ()=>{
+    if(!isLargeScreen){
+      setNoteMainFoodPage(false);
+      
+    }
     setNoteLogin(true);
     setNoteRegister(false);
     setNoteFoodCard(false);
     setNoteMainPage(false);
+    setNoteBasket(false);
+    
   }
 
   const clickRegisterPage = ()=>{
+    if(!isLargeScreen){
+      setNoteMainFoodPage(false);
+      
+    }
     setNoteLogin(false);
     setNoteRegister(true);
     setNoteFoodCard(false);
     setNoteMainPage(false);
+    setNoteBasket(false);
   }
 
   const clickMainPage = ()=>{
+    if(!isLargeScreen){
+      setNoteMainFoodPage(false);
+      
+    }
     setNoteLogin(false);
     setNoteRegister(false);
     setNoteFoodCard(false);
+    setNoteBasket(false);
     setNoteMainPage(true);
+  }
+
+  const clickBasketPage = ()=>{
+    if(!isLargeScreen){
+      setNoteMainFoodPage(false);
+      
+    }
+    setNoteLogin(false);
+    setNoteRegister(false);
+    setNoteFoodCard(false);
+    setNoteMainPage(false);
+    setNoteBasket(true);
+  }
+
+  const clickLogout = ()=>{
+    localStorage.clear();
+    setNoteLogin(false);
+    setNoteRegister(false);
+    setNoteFoodCard(false);
+    setNoteBasket(false);
+    setNoteMainPage(true);
+    setLoggedOut(true);
   }
 
   function createNavbarItems(products: string[]) {
@@ -128,7 +177,7 @@ export const Navbar = ({ productName, setProductName ,changePage, setChangePage,
                 <i className="fa fa-user" aria-hidden="true"></i>
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a className="dropdown-item" href="#">My Account</a></li>
+                <li><a className="dropdown-item" href="#" onClick={clickBasketPage}>My Basket</a></li>
                 <li><a className="dropdown-item" href="#">My Order</a></li>
                 <li><hr className="dropdown-divider" /></li>
                 {loggedOut ? (
@@ -137,7 +186,7 @@ export const Navbar = ({ productName, setProductName ,changePage, setChangePage,
                     <li className="dropdown-item" onClick={clickRegisterPage}><a href="#">Register</a></li>
                   </>
                 ) : (
-                  <li className="dropdown-item"><a href="#">Logout</a></li>
+                  <li className="dropdown-item"><a href="#" onClick={clickLogout}>Logout</a></li>
                 )}
               </ul>
             </li>

@@ -6,7 +6,10 @@ import './login.css';
 const Login = ({noteRegister, setNoteRegister,
   noteLogin, setNoteLogin,
   noteFoodCard, setNoteFoodCard,
-  noteMainPage, setNoteMainPage}) => {
+  noteMainPage, setNoteMainPage,
+  loggedOut, setLoggedOut}) => {
+
+    
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -34,6 +37,7 @@ const Login = ({noteRegister, setNoteRegister,
       setNoteRegister(false);
       setNoteFoodCard(false);
       setNoteMainPage(true);
+      setLoggedOut(false);
       
     } catch (err) {
       console.log(err);
@@ -76,7 +80,7 @@ const Login = ({noteRegister, setNoteRegister,
                     />
                   </div>
                   <div className="d-grid gap-2">
-                    <button type="submit" className="btn btn-outline-secondary">Login</button>
+                    <button type="submit" className="btn btn-outline-secondary" id="loginButton">Login</button>
                   </div>
                 </form>
               </div>

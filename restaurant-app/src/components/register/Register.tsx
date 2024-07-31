@@ -100,7 +100,7 @@ const Register = ({noteRegister, setNoteRegister,
                     />
                   </div>
                   <div className="d-grid gap-2">
-                    <button type="submit" className="btn btn-outline-secondary">Register</button>
+                    <button type="submit" className="btn btn-outline-secondary" id="registerButton">Register</button>
                   </div>
                 </form>
               </div>
