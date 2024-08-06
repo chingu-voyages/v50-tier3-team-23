@@ -6,7 +6,10 @@ import './login.css';
 const Login = ({noteRegister, setNoteRegister,
   noteLogin, setNoteLogin,
   noteFoodCard, setNoteFoodCard,
-  noteMainPage, setNoteMainPage}) => {
+  noteMainPage, setNoteMainPage,
+  loggedOut, setLoggedOut}) => {
+
+    
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -24,16 +27,17 @@ const Login = ({noteRegister, setNoteRegister,
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post(`http://localhost:5173/login`, formData);
+      const { data } = await axios.post(`http://127.0.0.1:8060/login`, formData);
       console.log(data.token);
       console.log(data);
       localStorage.setItem("token", data.token);
-      localStorage.setItem("userId", data.payload.id);
+      // localStorage.setItem("userId", data.payload.id);
       axios.defaults.headers.common["Authorization"] = `Bearer ${data.token}`;
       setNoteLogin(false);
       setNoteRegister(false);
       setNoteFoodCard(false);
       setNoteMainPage(true);
+      setLoggedOut(false);
       
     } catch (err) {
       console.log(err);
@@ -76,7 +80,7 @@ const Login = ({noteRegister, setNoteRegister,
                     />
                   </div>
                   <div className="d-grid gap-2">
-                    <button type="submit" className="btn btn-outline-secondary">Login</button>
+                    <button type="submit" className="btn btn-outline-secondary" id="loginButton">Login</button>
                   </div>
                 </form>
               </div>

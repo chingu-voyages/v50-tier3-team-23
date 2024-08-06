@@ -26,7 +26,7 @@ const Register = ({noteRegister, setNoteRegister,
   const handleSubmit = async(e) => {
     e.preventDefault();
     try {
-        const res = await axios.post(`http://localhost:5173/register`, formData);
+        const res = await axios.post(`http://localhost:8060/register`, formData);
         console.log(formData);
         setNoteLogin(true);
         setNoteRegister(false);
@@ -100,7 +100,7 @@ const Register = ({noteRegister, setNoteRegister,
                     />
                   </div>
                   <div className="d-grid gap-2">
-                    <button type="submit" className="btn btn-outline-secondary">Register</button>
+                    <button type="submit" className="btn btn-outline-secondary" id="registerButton">Register</button>
                   </div>
                 </form>
               </div>

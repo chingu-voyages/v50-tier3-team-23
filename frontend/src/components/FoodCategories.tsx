@@ -1,6 +1,6 @@
 import React, { useState , useEffect } from 'react';
 import { Navbar } from "./navbar/Navbar";
-import { Cart } from "./cart/Cart";
+import Cart  from "./cart/Cart";
 import  Main  from "./main/Main";
 import  FoodCard  from "./foodCard/FoodCard";
 import  Login  from "./login/Login";
@@ -16,18 +16,39 @@ export const FoodCategories = () => {
   const [noteLogin, setNoteLogin] = useState(false);
   const [noteFoodCard, setNoteFoodCard] = useState(false);
   const [noteMainPage, setNoteMainPage] = useState(false);
+<<<<<<< HEAD:frontend/src/components/FoodCategories.tsx
+=======
+  const [noteBasket, setNoteBasket] = useState(false);
+  const [noteMainFoodPage, setNoteMainFoodPage] = useState(false);
+  const [loggedOut, setLoggedOut] = useState(true);
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1224);
+>>>>>>> temp-branch:restaurant-app/src/components/FoodCategories.tsx
 
 
   useEffect (()=> {
+    localStorage.clear();
     setNoteLogin(false);
     setNoteRegister(false);
     setNoteFoodCard(false);
+    setNoteBasket(false);
+    setNoteMainFoodPage(false);
     setNoteMainPage(true);
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth > 1224);
+    };
+
+    const debounceResize = debounce(handleResize, 100);
+    window.addEventListener('resize', debounceResize);
+    return () => {
+      window.removeEventListener('resize', debounceResize);
+    };
 
     },[] );
   return (
-    <div className="flex flex-col lg:flex-row justify-between w-full h-full">
-      <div className=" lg:w-[70%] w-full">
+    <div >
+      {isLargeScreen && (
+        <>
+      <div className=" w-[70%]">
         <h2 className="font-poppins-bold cursor-pointer inline-block relative select-none text-3xl"> </h2>
 
 
@@ -35,7 +56,11 @@ export const FoodCategories = () => {
         noteRegister={noteRegister} setNoteRegister={setNoteRegister}
         noteLogin={noteLogin} setNoteLogin={setNoteLogin}
         noteFoodCard={noteFoodCard} setNoteFoodCard={setNoteFoodCard}
-        noteMainPage={noteMainPage} setNoteMainPage={setNoteMainPage}/>
+        noteMainPage={noteMainPage} setNoteMainPage={setNoteMainPage}
+        noteBasket={noteBasket} setNoteBasket={setNoteBasket}
+        noteMainFoodPage={noteMainFoodPage} setNoteMainFoodPage={setNoteMainFoodPage}
+        isLargeScreen={isLargeScreen} setIsLargeScreen={setIsLargeScreen}
+        loggedOut={loggedOut} setLoggedOut={setLoggedOut}/>
 
 
         <Main productName={productName} setProductName={setProductName} changePage={changePage} setChangePage={setChangePage} 
@@ -45,34 +70,119 @@ export const FoodCategories = () => {
         noteRegister={noteRegister} setNoteRegister={setNoteRegister}
         noteLogin={noteLogin} setNoteLogin={setNoteLogin}
         noteFoodCard={noteFoodCard} setNoteFoodCard={setNoteFoodCard}
-        noteMainPage={noteMainPage} setNoteMainPage={setNoteMainPage}/>
+        noteMainPage={noteMainPage} setNoteMainPage={setNoteMainPage}
+        noteBasket={noteBasket} setNoteBasket={setNoteBasket}
+        noteMainFoodPage={noteMainFoodPage} setNoteMainFoodPage={setNoteMainFoodPage}
+        isLargeScreen={isLargeScreen} setIsLargeScreen={setIsLargeScreen}/>
 
 
       </div>
-      <div className=" lg:w-[30%] ; , position:fixed;" >
-    
-        {/* <Cart /> */}
-        {noteMainPage && <>
+      <div className=" w-[30%] " >
+        
+        {noteBasket &&<Cart />}
+        {noteMainPage && 
         <div className="containImage">
-  
-        <img src="https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=600" className="updateVideo" />
+        <h2 className="updateImage">What Do You Like to Eat?</h2>
+        
         </div>
-        <h2 className="updateImage">What Do You Like to Eat?</h2> </>}
+         }
 
        
        {noteFoodCard && <FoodCard foodSelected={foodSelected} setFoodSelected={setFoodSelected} 
         foodSelectedIndex={foodSelectedIndex} setFoodSelectedIndex={setFoodSelectedIndex} 
-        foodSelectedList={foodSelectedList} setFoodSelectedList={setFoodSelectedList}/>}
+        foodSelectedList={foodSelectedList} setFoodSelectedList={setFoodSelectedList}
+        noteRegister={noteRegister} setNoteRegister={setNoteRegister}
+        noteLogin={noteLogin} setNoteLogin={setNoteLogin}
+        noteFoodCard={noteFoodCard} setNoteFoodCard={setNoteFoodCard}
+        noteMainPage={noteMainPage} setNoteMainPage={setNoteMainPage}
+        noteBasket={noteBasket} setNoteBasket={setNoteBasket}/>}
 
         {noteRegister && <Register noteRegister={noteRegister} setNoteRegister={setNoteRegister}
         noteLogin={noteLogin} setNoteLogin={setNoteLogin}
         noteFoodCard={noteFoodCard} setNoteFoodCard={setNoteFoodCard}
         noteMainPage={noteMainPage} setNoteMainPage={setNoteMainPage} /> }
+
+        
         {noteLogin && <Login noteRegister={noteRegister} setNoteRegister={setNoteRegister}
         noteLogin={noteLogin} setNoteLogin={setNoteLogin}
         noteFoodCard={noteFoodCard} setNoteFoodCard={setNoteFoodCard}
-        noteMainPage={noteMainPage} setNoteMainPage={setNoteMainPage}/> }
+        noteMainPage={noteMainPage} setNoteMainPage={setNoteMainPage}
+        loggedOut={loggedOut} setLoggedOut={setLoggedOut}/> }
       </div>
+       </>)}
+
+
+       {!isLargeScreen && (
+        <>
+      
+        <h2 className="font-poppins-bold cursor-pointer inline-block relative select-none text-3xl"> </h2>
+
+
+        <Navbar productName={productName} setProductName={setProductName} changePage={changePage} setChangePage={setChangePage}
+        noteRegister={noteRegister} setNoteRegister={setNoteRegister}
+        noteLogin={noteLogin} setNoteLogin={setNoteLogin}
+        noteFoodCard={noteFoodCard} setNoteFoodCard={setNoteFoodCard}
+        noteMainPage={noteMainPage} setNoteMainPage={setNoteMainPage}
+        noteBasket={noteBasket} setNoteBasket={setNoteBasket}
+        noteMainFoodPage={noteMainFoodPage} setNoteMainFoodPage={setNoteMainFoodPage}
+        isLargeScreen={isLargeScreen} setIsLargeScreen={setIsLargeScreen}
+        loggedOut={loggedOut} setLoggedOut={setLoggedOut}/>
+
+
+        {noteMainFoodPage &&<Main productName={productName} setProductName={setProductName} changePage={changePage} setChangePage={setChangePage} 
+        foodSelected={foodSelected} setFoodSelected={setFoodSelected} 
+        foodSelectedIndex={foodSelectedIndex} setFoodSelectedIndex={setFoodSelectedIndex} 
+        foodSelectedList={foodSelectedList} setFoodSelectedList={setFoodSelectedList}
+        noteRegister={noteRegister} setNoteRegister={setNoteRegister}
+        noteLogin={noteLogin} setNoteLogin={setNoteLogin}
+        noteFoodCard={noteFoodCard} setNoteFoodCard={setNoteFoodCard}
+        noteMainPage={noteMainPage} setNoteMainPage={setNoteMainPage}
+        noteBasket={noteBasket} setNoteBasket={setNoteBasket}
+        noteMainFoodPage={noteMainFoodPage} setNoteMainFoodPage={setNoteMainFoodPage}
+        isLargeScreen={isLargeScreen} setIsLargeScreen={setIsLargeScreen}/> }
+
+
+       {noteMainPage && <>
+        <div className="containImage" style={{  width: '100%'}}>
+  
+        
+        </div>
+        <h2 className="updateImage">What Do You Like to Eat?</h2> </>}
+      
+        
+        {noteBasket &&<Cart />}
+        
+
+       
+       {noteFoodCard && <FoodCard foodSelected={foodSelected} setFoodSelected={setFoodSelected} 
+        foodSelectedIndex={foodSelectedIndex} setFoodSelectedIndex={setFoodSelectedIndex} 
+        foodSelectedList={foodSelectedList} setFoodSelectedList={setFoodSelectedList}
+        noteRegister={noteRegister} setNoteRegister={setNoteRegister}
+        noteLogin={noteLogin} setNoteLogin={setNoteLogin}
+        noteFoodCard={noteFoodCard} setNoteFoodCard={setNoteFoodCard}
+        noteMainPage={noteMainPage} setNoteMainPage={setNoteMainPage}
+        noteBasket={noteBasket} setNoteBasket={setNoteBasket}/>}
+
+        {noteRegister && <Register noteRegister={noteRegister} setNoteRegister={setNoteRegister}
+        noteLogin={noteLogin} setNoteLogin={setNoteLogin}
+        noteFoodCard={noteFoodCard} setNoteFoodCard={setNoteFoodCard}
+        noteMainPage={noteMainPage} setNoteMainPage={setNoteMainPage} /> }
+
+        
+        {noteLogin && <Login noteRegister={noteRegister} setNoteRegister={setNoteRegister}
+        noteLogin={noteLogin} setNoteLogin={setNoteLogin}
+        noteFoodCard={noteFoodCard} setNoteFoodCard={setNoteFoodCard}
+        noteMainPage={noteMainPage} setNoteMainPage={setNoteMainPage}
+        loggedOut={loggedOut} setLoggedOut={setLoggedOut}/> }
+      
+       </>)}
     </div>
   );
 };
+function debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
