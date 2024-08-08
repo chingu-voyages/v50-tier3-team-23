@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState , useEffect } from 'react'
 import axios from "axios";
-import "./Main.css"; // Make sure to import the CSS
+import "./Main.css";
 
 
   const Main = ({ productName, setProductName ,changePage, setChangePage ,foodSelected, setFoodSelected, 

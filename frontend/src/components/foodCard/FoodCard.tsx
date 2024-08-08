@@ -3,6 +3,7 @@ import { useState , useEffect } from 'react'
 // import { API_URL } from "../consts";
 import axios from "axios";
 import "./FoodCard.css"; 
+import { useCookies } from 'react-cookie';
 
 
 
@@ -15,6 +16,8 @@ import "./FoodCard.css";
     noteMainPage, setNoteMainPage,
     noteBasket, setNoteBasket }) => {
     const [quantity, setQuantity] = useState<number>(1);
+    const [cookie, setCookie, removeCookie] = useCookies();
+
     
     const clickBasketPage = ()=>{
       setNoteLogin(false);
@@ -26,8 +29,10 @@ import "./FoodCard.css";
   
     const handleAddToBasket = async (event: React.FormEvent) => {
       event.preventDefault();
-      const token = localStorage.getItem('token'); // Assuming the token is stored in localStorage
-      if (token) {
+      const token = localStorage.getItem('token'); 
+      const userEmail = cookie.Email;
+      const authToken = cookie.AuthToken;// Assuming the token is stored in localStorage
+      if (authToken) {
         // User is logged in, save to localStorage
         const basketItem = {
           foodSelected,

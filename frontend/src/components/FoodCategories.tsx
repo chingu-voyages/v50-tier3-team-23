@@ -16,13 +16,10 @@ export const FoodCategories = () => {
   const [noteLogin, setNoteLogin] = useState(false);
   const [noteFoodCard, setNoteFoodCard] = useState(false);
   const [noteMainPage, setNoteMainPage] = useState(false);
-<<<<<<< HEAD:frontend/src/components/FoodCategories.tsx
-=======
   const [noteBasket, setNoteBasket] = useState(false);
   const [noteMainFoodPage, setNoteMainFoodPage] = useState(false);
   const [loggedOut, setLoggedOut] = useState(true);
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1224);
->>>>>>> temp-branch:restaurant-app/src/components/FoodCategories.tsx
 
 
   useEffect (()=> {
