@@ -3,7 +3,14 @@ import { useState , useEffect } from 'react'
 import axios from "axios";
 import "./Main.css";
 
-
+type FoodData = {
+  id: number;
+  name: string;
+  img: string;
+  dsc: string;
+  price: number;
+  category: string;
+}
   const Main = ({ productName, setProductName ,changePage, setChangePage ,foodSelected, setFoodSelected, 
     foodSelectedIndex, setFoodSelectedIndex, 
     foodSelectedList, setFoodSelectedList,
@@ -14,7 +21,7 @@ import "./Main.css";
     noteBasket, setNoteBasket,
     noteMainFoodPage, setNoteMainFoodPage,
     isLargeScreen, setIsLargeScreen}) => {
-    const [foodData, setFoodData] = useState([]);
+    const [foodData, setFoodData] = useState<FoodData[]>([]);
     
   
     useEffect (()=> {
@@ -47,12 +54,13 @@ import "./Main.css";
         setNoteBasket(false);
       }
     
+      const defaultImage = "/utensils.jpg"
   
     return (
       <div className="container">
         {foodData.map((food, index) => (
           <div className="card" key={index} onClick={() => handleFoodClick(food, index, productName)}>
-            <img src={food.img} alt={food.name} />
+            <img src={food.img || defaultImage} alt={food.name}  onError={(e : any) => { e.target.src = defaultImage; }}  />
             <div className="card-title">{food.dsc}</div>
           </div>
         ))}

@@ -18,6 +18,15 @@
 }
 #containerFoodCardInside{
     padding: 0;
+    overflow-y: scroll;
+    height: 98vh;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#containerFoodCardInside::-webkit-scrollbar {
+    display: none;
 }
 
 #quantity{
@@ -39,6 +48,5 @@
         position: fixed;
         top: 0;
         right: 0;
-    
     }
 }
