@@ -1,0 +1,44 @@
+
+
+.table {
+    width: 100%;
+    font-size: 0.8rem;
+  
+}
+
+.table img {
+    width: 100px;
+}
+
+.table .favoritName {
+    width: 25%;
+}
+.form-control{
+    width: 250%;
+}
+
+.table .favoritSubtotal {
+    width: 10%;
+}
+
+.btn-outline-secondary {
+    width: 100%;
+    /* height: 3rem; */
+}
+
+.d-grid.gap-2 {
+    margin-top: 20px;
+}
+
+@media (min-width:1224px ) {
+    .cart-container {
+        height: 100vh;
+        width: 30vw;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        overflow-y: auto;
+    }
+}

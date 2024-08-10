@@ -69,7 +69,7 @@ export const login = async ({
   }
 };
 
-export const checkOut = async (quantity: number) => {
+export const checkOut = async (data) => {
   const url = `${baseUrl}/create-checkout-session`;
   try {
     const response = await fetch(
@@ -80,7 +80,7 @@ export const checkOut = async (quantity: number) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          quantity: quantity,
+          quantity: data,
         }),
       }
     );

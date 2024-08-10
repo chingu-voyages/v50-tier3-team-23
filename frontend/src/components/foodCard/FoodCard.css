@@ -1,13 +1,4 @@
-#containerFoodCard{
-    height: 100vh;
-    width: 30vw;
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    top: 0;
-    right: 0;
 
-}
 
 #containerImageCard{
     height: 50%;
@@ -27,6 +18,15 @@
 }
 #containerFoodCardInside{
     padding: 0;
+    overflow-y: scroll;
+    height: 98vh;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#containerFoodCardInside::-webkit-scrollbar {
+    display: none;
 }
 
 #quantity{
@@ -37,4 +37,16 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+@media (min-width:1224px ) {
+    #containerFoodCard{
+        height: 100vh;
+        width: 30vw;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
 }

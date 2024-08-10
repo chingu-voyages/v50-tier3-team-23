@@ -19,7 +19,7 @@ const Left:React.FC<LeftProps> = (props) => {
     return (
     <div className=" flex-1">
         <h2 className="font-poppins-bold cursor-pointer inline-block relative select-none text-3xl">What you like ? </h2>
-        <Navbar categs={productCategs} navbarHasSelected={navbarHasSelected}/>
+        {/* <Navbar categs={productCategs} navbarHasSelected={navbarHasSelected}/> */}
         <ProductSelector data = {data} selectedProduct = {selectedProduct} ></ProductSelector>
     </div>    
     )

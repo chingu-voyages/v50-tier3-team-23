@@ -97,27 +97,29 @@ app.post("/login", async (req, res) => {
 });
 
 app.post("/create-checkout-session", async (req, res) => {
+  const data = req.body;
+  console.log('Received data:', data);
+  if (!data) {
+    return res.status(400).send({ error: "No data received" });
+  }
   try {
+    const lineItems = data.map(item => ({
+      price_data: {
+        currency: 'usd',
+        unit_amount: item.unit_amount,
+        product_data: item.product_data,
+      },
+      quantity: item.quantity,
+    }));
+    console.log('Line items:', lineItems);
     const session = await stripe.checkout.sessions.create({
       ui_mode: "embedded",
       payment_method_types: ["card"],
-      line_items: [
-        {
-          price_data: {
-            currency: "usd",
-            product_data: {
-              name: "Burger",
-            },
-            unit_amount: 2000,
-          },
-          quantity: 1,
-        },
-      ],
+      line_items: lineItems,
       mode: "payment",
       return_url:
         "http://localhost:5173/return?session_id={CHECKOUT_SESSION_ID}",
     });
-
     res.send({ clientSecret: session.client_secret });
   } catch (error) {
     res.status(500).send({ error: error.message });

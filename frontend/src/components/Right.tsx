@@ -1,6 +1,5 @@
 import React from 'react';
-import {Cart} from '../components/cart/Cart';
-
+import Cart from './cart/Cart';
 const Right = () => (
     <div className=" lg:w-[25%] w-full">
         <Cart />
