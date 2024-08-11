@@ -134,7 +134,7 @@ app.post("/create-checkout-session", async (req, res) => {
       line_items: lineItems,
       mode: "payment",
       return_url:
-        "http://localhost:5173/return?session_id={CHECKOUT_SESSION_ID}",
+        "https://resteraunt-app-client.netlify.app/return?session_id={CHECKOUT_SESSION_ID}",
     });
     res.send({ clientSecret: session.client_secret });
   } catch (error) {
