@@ -33,7 +33,7 @@ const pool = require("./db");
 // initializeDatabase();
 
 app.get("/", async (req, res) => {
-  res.send("Hello World");
+  res.send("Hello From Server");
 });
 
 app.get("/getAllUsers", async (req, res) => {
