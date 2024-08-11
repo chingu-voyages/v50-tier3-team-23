@@ -10,7 +10,9 @@ const Stripe = require("stripe");
 const app = express();
 require("dotenv").config();
 
-app.use(cors());
+app.use(cors({
+  origin: ["https://resteraunt-app-client.netlify.app", "http://localhost:5173"]
+}));
 app.use(express.json());
 
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
