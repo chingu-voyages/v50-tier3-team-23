@@ -14,7 +14,23 @@ app.use(cors());
 app.use(express.json());
 
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+
+const fs = require('fs');
+const path = require('path');
 const pool = require("./db");
+
+// Run the SQL script to initialize the database
+const initializeDatabase = async () => {
+  const sql = fs.readFileSync(path.join(__dirname, 'data.sql')).toString();
+  try {
+    await pool.query(sql);
+    console.log('Database initialized successfully');
+  } catch (err) {
+    console.error('Error initializing database:', err);
+  }
+};
+
+initializeDatabase();
 
 app.get("/", async (req, res) => {
   res.send("Hello World");
