@@ -19,18 +19,18 @@ const fs = require('fs');
 const path = require('path');
 const pool = require("./db");
 
-// Run the SQL script to initialize the database
-const initializeDatabase = async () => {
-  const sql = fs.readFileSync(path.join(__dirname, 'data.sql')).toString();
-  try {
-    await pool.query(sql);
-    console.log('Database initialized successfully');
-  } catch (err) {
-    console.error('Error initializing database:', err);
-  }
-};
+// // Run the SQL script to initialize the database
+// const initializeDatabase = async () => {
+//   const sql = fs.readFileSync(path.join(__dirname, 'data.sql')).toString();
+//   try {
+//     await pool.query(sql);
+//     console.log('Database initialized successfully');
+//   } catch (err) {
+//     console.error('Error initializing database:', err);
+//   }
+// };
 
-initializeDatabase();
+// initializeDatabase();
 
 app.get("/", async (req, res) => {
   res.send("Hello World");
@@ -107,7 +107,7 @@ app.post("/login", async (req, res) => {
       user_email,
     });
   } catch (error) {
-    console.log("ERROR CREATING USER: ", error);
+    console.log("ERROR LOGGING IN USER: ", error);
     return { status: 401, message: error };
   }
 });
