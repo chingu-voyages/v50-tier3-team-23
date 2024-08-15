@@ -1,34 +1,46 @@
-# The International Me App
+**Project Name:**- *The Fork&Spoon App*
 
-# Our Vision:
-To create and manage an online restaurant page where customers can order food from different countries' cuisine, all in one app.
-The International Me Restaurant is providing customers with diverse recipes so the customers can feel the real taste of the chosen countries, all in one place. 
+**Our Vision:**
+To create and manage an online delivery app where customers can order food from different countries' cuisine, all in one app.
+The Fork&Spoon App is providing customers with diverse recipes so the customers can feel the real taste of the chosen countries, all in one place. 
 
-# Our Mission:
+**Our Mission:**
 
 To be able to serve unique and diverse culture food recipes to our food lovers in our communities who love to taste different types of meals from different parts of the world.
 
-> Own it & Make it your Own!
-## Team Documents
+![Screenshot 2024-08-15 231221](https://github.com/user-attachments/assets/8e2129c4-92e3-4631-b02d-f7cc2eb8aa80)
 
-You may find these helpful as you work together to organize your project.
+<img width="923" alt="Shot 1" src="https://github.com/user-attachments/assets/8c07f52d-8619-4fb0-bbc2-cde96afc1943">
 
-- [Team Project Ideas](./docs/team_project_ideas.md)
-- [Team Decision Log](./docs/team_decision_log.md)
+![Shot 2](https://github.com/user-attachments/assets/a9489d6d-b833-4012-9e31-17f042cdb7f7)
 
-Meeting Agenda templates (located in the `/docs` directory in this repo):
+![Shot 3](https://github.com/user-attachments/assets/f050103b-59ba-408f-9985-fc5287f4a59d)
 
-- Meeting - Voyage Kickoff --> ./docs/meeting-voyage_kickoff.docx
-- Meeting - App Vision & Feature Planning --> ./docs/meeting-vision_and_feature_planning.docx
-- Meeting - Sprint Retrospective, Review, and Planning --> ./docs/meeting-sprint_retrospective_review_and_planning.docx
-- Meeting - Sprint Open Topic Session --> ./docs/meeting-sprint_open_topic_session.docx
+![Shot 4](https://github.com/user-attachments/assets/82aa1106-c729-419d-a611-c2e59195a961)
 
-## Our Team
+![Shot 5](https://github.com/user-attachments/assets/ccf1ebcb-0b22-4a8e-a56a-acc71ae14cc3)
 
-Everyone on your team should add their name along with a link to their GitHub
-& optionally their LinkedIn profiles below. Do this in Sprint #1 to validate
-your repo access and to practice PR'ing with your team *before* you start
-coding!
+**Github repo-** [Click here](https://github.com/chingu-voyages/v50-tier3-team-23)
+
+**Deployed Project-** [Click here](https://resteraunt-app-client.netlify.app/)
+
+**The app was built using the following:**
+
+**FrontEnd-** ReactJs, TypeScript, JavaScript
+
+**Backend-**  Node.Js, PostgreSQL, ExpressJs
+
+**Authentication-** JWT tokens
+
+**Tools-** Render
+
+**Deployment Cloud-** Netlify
+
+**Project Management Tool:** GitHub Projects, Google Drive
+
+**Team Communication Tools:** Discord Channels
+
+## Our Amazing Team
 
 - Victor Stanescu #1: [GitHub](https://github.com/stanescuV) / [LinkedIn](https://www.linkedin.com/in/victor-stanescu-83bb68194/)
 - Mariana Farcas #2: [GitHub](https://github.com/MarianaFarcas) / [LinkedIn](https://linkedin.com/in/mariana-f-6592661b5)
