@@ -1,15 +1,13 @@
-# voyage-tasks
+# The International Me App
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
+# Our Vision:
+To create and manage an online restaurant page where customers can order food from different countries' cuisine, all in one app.
+The International Me Restaurant is providing customers with diverse recipes so the customers can feel the real taste of the chosen countries, all in one place. 
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
+# Our Mission:
 
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
+To be able to serve unique and diverse culture food recipes to our food lovers in our communities who love to taste different types of meals from different parts of the world.
+
 
 > Own it & Make it your Own!
 ## Team Documents
