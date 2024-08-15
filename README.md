@@ -8,7 +8,6 @@ The International Me Restaurant is providing customers with diverse recipes so t
 
 To be able to serve unique and diverse culture food recipes to our food lovers in our communities who love to taste different types of meals from different parts of the world.
 
-
 > Own it & Make it your Own!
 ## Team Documents
 
