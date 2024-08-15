@@ -10,14 +10,32 @@ const Stripe = require("stripe");
 const app = express();
 require("dotenv").config();
 
-app.use(cors());
+app.use(cors({
+  origin: ["https://resteraunt-app-client.netlify.app", "http://localhost:5173"]
+}));
 app.use(express.json());
 
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+
+const fs = require('fs');
+const path = require('path');
 const pool = require("./db");
 
+// // Run the SQL script to initialize the database
+// const initializeDatabase = async () => {
+//   const sql = fs.readFileSync(path.join(__dirname, 'data.sql')).toString();
+//   try {
+//     await pool.query(sql);
+//     console.log('Database initialized successfully');
+//   } catch (err) {
+//     console.error('Error initializing database:', err);
+//   }
+// };
+
+// initializeDatabase();
+
 app.get("/", async (req, res) => {
-  res.send("Hello World");
+  res.send("Hello From Server");
 });
 
 app.get("/getAllUsers", async (req, res) => {
@@ -91,33 +109,35 @@ app.post("/login", async (req, res) => {
       user_email,
     });
   } catch (error) {
-    console.log("ERROR CREATING USER: ", error);
+    console.log("ERROR LOGGING IN USER: ", error);
     return { status: 401, message: error };
   }
 });
 
 app.post("/create-checkout-session", async (req, res) => {
+  const data = req.body;
+  console.log('Received data:', data);
+  if (!data) {
+    return res.status(400).send({ error: "No data received" });
+  }
   try {
+    const lineItems = data.map(item => ({
+      price_data: {
+        currency: 'usd',
+        unit_amount: item.unit_amount,
+        product_data: item.product_data,
+      },
+      quantity: item.quantity,
+    }));
+    console.log('Line items:', lineItems);
     const session = await stripe.checkout.sessions.create({
       ui_mode: "embedded",
       payment_method_types: ["card"],
-      line_items: [
-        {
-          price_data: {
-            currency: "usd",
-            product_data: {
-              name: "Burger",
-            },
-            unit_amount: 2000,
-          },
-          quantity: 1,
-        },
-      ],
+      line_items: lineItems,
       mode: "payment",
       return_url:
-        "http://localhost:5173/return?session_id={CHECKOUT_SESSION_ID}",
+        "https://resteraunt-app-client.netlify.app/return?session_id={CHECKOUT_SESSION_ID}",
     });
-
     res.send({ clientSecret: session.client_secret });
   } catch (error) {
     res.status(500).send({ error: error.message });

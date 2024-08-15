@@ -1,17 +1,27 @@
 import React from 'react';
 import { useState , useEffect } from 'react'
 import axios from "axios";
-import "./Main.css"; // Make sure to import the CSS
+import "./Main.css";
 
-
+type FoodData = {
+  id: number;
+  name: string;
+  img: string;
+  dsc: string;
+  price: number;
+  category: string;
+}
   const Main = ({ productName, setProductName ,changePage, setChangePage ,foodSelected, setFoodSelected, 
     foodSelectedIndex, setFoodSelectedIndex, 
     foodSelectedList, setFoodSelectedList,
     noteRegister, setNoteRegister,
     noteLogin, setNoteLogin,
     noteFoodCard, setNoteFoodCard,
-    noteMainPage, setNoteMainPage }) => {
-    const [foodData, setFoodData] = useState([]);
+    noteMainPage, setNoteMainPage,
+    noteBasket, setNoteBasket,
+    noteMainFoodPage, setNoteMainFoodPage,
+    isLargeScreen, setIsLargeScreen}) => {
+    const [foodData, setFoodData] = useState<FoodData[]>([]);
     
   
     useEffect (()=> {
@@ -31,6 +41,9 @@ import "./Main.css"; // Make sure to import the CSS
 
 
       function handleFoodClick(food, index, productName) {
+        
+        setNoteMainFoodPage(false);
+     
         setFoodSelected(food);
         setFoodSelectedIndex(index);
         setFoodSelectedList(productName)
@@ -38,14 +51,16 @@ import "./Main.css"; // Make sure to import the CSS
         setNoteRegister(false);
         setNoteFoodCard(true);
         setNoteMainPage(false);
+        setNoteBasket(false);
       }
     
+      const defaultImage = "/utensils.jpg"
   
     return (
       <div className="container">
         {foodData.map((food, index) => (
           <div className="card" key={index} onClick={() => handleFoodClick(food, index, productName)}>
-            <img src={food.img} alt={food.name} />
+            <img src={food.img || defaultImage} alt={food.name}  onError={(e : any) => { e.target.src = defaultImage; }}  />
             <div className="card-title">{food.dsc}</div>
           </div>
         ))}

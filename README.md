@@ -1,15 +1,12 @@
-# voyage-tasks
+# The International Me App
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
+## Our Vision:
+To create and manage an online restaurant page where customers can order food from different countries' cuisine, all in one app.
+The International Me Restaurant is providing customers with diverse recipes so the customers can feel the real taste of the chosen countries, all in one place. 
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
+## Our Mission:
 
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
+To be able to serve unique and diverse culture food recipes to our food lovers in our communities who love to taste different types of meals from different parts of the world.
 
 > Own it & Make it your Own!
 ## Team Documents
@@ -33,8 +30,8 @@ Everyone on your team should add their name along with a link to their GitHub
 your repo access and to practice PR'ing with your team *before* you start
 coding!
 
-- Victor Stanescu: [GitHub](https://github.com/stanescuV) / [LinkedIn](https://www.linkedin.com/in/victor-stanescu-83bb68194/)
-- Mariana Farcas: [GitHub](https://github.com/MarianaFarcas) / [LinkedIn](https://linkedin.com/in/mariana-f-6592661b5)
-- Joshua Famose: [GitHub](https://github.com/Joshf225) / [LinkedIn](https://www.linkedin.com/in/joshua-famose-649179247/)
-- Favour Sunday: [GitHub](https://github.com/Sunday012) / [LinkedIn](https://www.linkedin.com/in/favour-sunday-6059682a2/)
-- Teammate name: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Victor Stanescu #1: [GitHub](https://github.com/stanescuV) / [LinkedIn](https://www.linkedin.com/in/victor-stanescu-83bb68194/)
+- Mariana Farcas #2: [GitHub](https://github.com/MarianaFarcas) / [LinkedIn](https://linkedin.com/in/mariana-f-6592661b5)
+- Joshua Famose #3: [GitHub](https://github.com/Joshf225) / [LinkedIn](https://www.linkedin.com/in/joshua-famose-649179247/)
+- Favour Sunday #4: [GitHub](https://github.com/Sunday012) / [LinkedIn](https://www.linkedin.com/in/favour-sunday-6059682a2/)
+- Maryam Hazrati #5: [GitHub](https://github.com/Maryamh12) / [LinkedIn](https://linkedin.com/in/maryam-hazratiii)
