@@ -1,10 +1,10 @@
 # The International Me App
 
-## Our Vision:
+# Our Vision:
 To create and manage an online restaurant page where customers can order food from different countries' cuisine, all in one app.
 The International Me Restaurant is providing customers with diverse recipes so the customers can feel the real taste of the chosen countries, all in one place. 
 
-## Our Mission:
+# Our Mission:
 
 To be able to serve unique and diverse culture food recipes to our food lovers in our communities who love to taste different types of meals from different parts of the world.
 
