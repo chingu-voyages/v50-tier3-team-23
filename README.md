@@ -32,7 +32,7 @@ To be able to serve unique and diverse culture food recipes to our food lovers i
 
 **Authentication-** JWT tokens
 
-**Tools-** Render
+**Tools-** Render, Aiven Console
 
 **Deployment Cloud-** Netlify
 
