@@ -1,14 +1,13 @@
-**Project Name:**- *The Fork&Spoon App*
+**Project Name:**- *Global Bites* App
 
 **Our Vision:**
 To create and manage an online delivery app where customers can order food from different countries' cuisine, all in one app.
-The Fork&Spoon App is providing customers with diverse recipes so the customers can feel the real taste of the chosen countries, all in one place. 
+The Global Bites App is providing customers with diverse recipes so the customers can feel the real taste of the chosen countries, all in one place. 
 
 **Our Mission:**
-
 To be able to serve unique and diverse culture food recipes to our food lovers in our communities who love to taste different types of meals from different parts of the world.
 
-![Screenshot 2024-08-15 231221](https://github.com/user-attachments/assets/8e2129c4-92e3-4631-b02d-f7cc2eb8aa80)
+![Logo Global Bites](https://github.com/user-attachments/assets/444a9eab-3fbf-4a1e-925b-84a9ed6b2c3b)
 
 <img width="923" alt="Shot 1" src="https://github.com/user-attachments/assets/8c07f52d-8619-4fb0-bbc2-cde96afc1943">
 
