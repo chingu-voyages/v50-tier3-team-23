@@ -11,7 +11,7 @@ const app = express();
 require("dotenv").config();
 
 app.use(cors({
-  origin: ["https://resteraunt-app-client.netlify.app", "http://localhost:5173"]
+  origin: ["https://globalbites.netlify.app", "http://localhost:5173"]
 }));
 app.use(express.json());
 
